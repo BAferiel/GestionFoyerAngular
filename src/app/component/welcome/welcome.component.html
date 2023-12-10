@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container px-4 px-lg-5">
+       
+       
+    </div>
+</nav>
+<app-sidebar></app-sidebar>
+<!-- Header -->
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder text-white">Welcome  {{user.name}}</h1>
+            <p class="lead fw-normal text-white-50 mb-0">
+                {{ isLoggedIn ? 'You are logged in.' : 'Please log in to access your profile.' }}
+            </p>
+        </div>
+    </div>
+</header>
+<!-- Section -->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-center">
+            <!-- Add your product cards here -->
+        </div>
+    </div>
+</section>

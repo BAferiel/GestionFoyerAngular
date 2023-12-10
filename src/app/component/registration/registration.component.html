@@ -1,0 +1,178 @@
+<!-- registration.component.html -->
+<nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent mt-4">
+    <div class="container">
+      <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon mt-2">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav mx-auto">
+        
+          <li class="nav-item">
+            <a class="nav-link me-2" [routerLink]="['/register']">
+              <i class="fas fa-user-circle opacity-6  me-1"></i>
+              Sign Up
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-2" [routerLink]="['/login']">
+              <i class="fas fa-key opacity-6  me-1"></i>
+              Sign In
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+  
+  <main class="main-content  mt-0">
+    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg'); background-position: top;">
+      <span class="mask bg-gradient-dark opacity-6"></span>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5 text-center mx-auto">
+            <h1 class="text-white mb-2 mt-5">Welcome!</h1>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container">
+      <div class="row mt-lg-n10 mt-md-n11 mt-n10 justify-content-center">
+        <div class="col-xl-7 col-lg-5 col-md-7 mx-auto">
+          <div class="card z-index-0">
+            <!-- Card content here -->
+            <div class="card z-index-0">
+                <div class="card-header text-center pt-4">
+                  <h2 class="mb-4 text-center">User Registration</h2>
+                  <form (submit)="registerUser()" #registrationForm="ngForm">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">FirstName:</label>
+                          <input type="text" id="name" name="name" [(ngModel)]="user.name" class="form-control" #nom="ngModel" [ngClass]="{'is-invalid': nom.invalid && (nom.dirty || nom.touched), 'is-valid': !nom.invalid && (nom.dirty || nom.touched)}" pattern="[a-zA-Z\s]*" required> 
+                          <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="invalid-feedback">
+                            <div *ngIf="nom?.errors?.['required']">
+                              Name is required.
+                            </div>
+                             <div *ngIf="nom?.errors?.['pattern']">
+                              Name is not valid.
+                            </div> 
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">LastName:</label>
+                          <input type="text" id="prenomEt" name="prenomEt" [(ngModel)]="user.prenomEt" class="form-control" pattern="[a-zA-Z\s]*" #prenom="ngModel" [ngClass]="{'is-invalid': prenom.invalid && (prenom.dirty || prenom.touched), 'is-valid': !prenom.invalid && (prenom.dirty || prenom.touched)}" required>
+                          <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)" class="invalid-feedback">
+                            <div *ngIf="prenom?.errors?.['required']">
+                              LastName is required.
+                            </div>
+                            <div *ngIf="prenom?.errors?.['pattern']">
+                              LastName is not valid.
+                            </div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Email:</label>
+                          <input type="email" id="email" name="email" [(ngModel)]="user.email" class="form-control" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" #mail="ngModel" [ngClass]="{'is-invalid': mail.invalid && (mail.dirty || mail.touched), 'is-valid': !mail.invalid && (mail.dirty || mail.touched)}" required>
+                          <div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="invalid-feedback">
+                            <div *ngIf="mail?.errors?.['required']">
+                              Email is required.
+                            </div>
+                            <div *ngIf="mail?.errors?.['pattern']">
+                              Email is not valid.
+                            </div></div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Password:</label>
+                          <input type="password" id="password" name="password" [(ngModel)]="user.password" class="form-control"  #pwd="ngModel" [ngClass]="{'is-invalid': pwd.invalid && (pwd.dirty || pwd.touched), 'is-valid': !pwd.invalid && (pwd.dirty || pwd.touched)}"  required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">CIN:</label>
+                          <input type="text" id="cin" name="cin" [(ngModel)]="user.cin" class="form-control" #c="ngModel" pattern="[0-9]{8}" [ngClass]="{'is-invalid': c.invalid && (c.dirty || c.touched), 'is-valid': !c.invalid && (c.dirty || c.touched)}" required>
+                          <div *ngIf="c.invalid && (c.dirty || c.touched)" class="invalid-feedback">
+                            <div *ngIf="c?.errors?.['required']">
+                              CIN is required.
+                            </div>
+                            <div *ngIf="c?.errors?.['pattern']">
+                              CIN is not valid.
+                            </div></div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">School:</label>
+                          <input type="text" id="ecole" name="ecole" [(ngModel)]="user.ecole" class="form-control" required #ec="ngModel" [ngClass]="{'is-invalid': ec.invalid && (ec.dirty || ec.touched), 'is-valid': !ec.invalid && (ec.dirty || ec.touched)}">
+                          <div *ngIf="ec.invalid && (ec.dirty || ec.touched)" class="invalid-feedback">
+                            <div *ngIf="ec?.errors?.['required']">
+                              School is required.
+                            </div>
+                            <div *ngIf="ec?.errors?.['pattern']">
+                              School is not valid.
+                            </div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">BirthDate:</label>
+                          <input type="date" id="dataNaissance" name="dataNaissance" pattern="\d{4}-\d{2}-\d{2}" #dataNaissance="ngModel" [ngClass]="{'is-invalid': dataNaissance.invalid && (dataNaissance.dirty || dataNaissance.touched), 'is-valid': !dataNaissance.invalid && (dataNaissance.dirty || dataNaissance.touched)}" [(ngModel)]="user.dataNaissance" class="form-control">
+                          <div *ngIf="dataNaissance.invalid && (dataNaissance.dirty || dataNaissance.touched)" class="invalid-feedback">
+                            <div *ngIf="dataNaissance?.errors?.['required']">
+                              BirthDate is required.
+                            </div>
+                            <div *ngIf="dataNaissance?.errors?.['pattern']">
+                              BirthDate is not valid.
+                            </div></div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label">Roles:</label>
+                          <select class="form-select" name="roles" [(ngModel)]="user.roles" required #roles="ngModel"
+                                  [ngClass]="{'is-invalid': roles.invalid && (roles.dirty || roles.touched), 'is-valid': !roles.invalid && (roles.dirty || roles.touched)}">
+                              <option value="ROLE_ADMIN">Admin</option>
+                              <option value="ROLE_USER">User</option>
+                          </select>
+                          <div *ngIf="roles.invalid && (roles.dirty || roles.touched)" class="invalid-feedback">
+                              <div *ngIf="roles.errors?.['required']">
+                                  Roles is required.
+                              </div>
+                          </div>
+                        </div></div>
+                      
+                    </div>
+                  
+                    <!-- Add additional fields for id and other properties if needed -->
+                    <button type="submit" class="btn btn-primary btn-block" [disabled]="!registrationForm.valid">Register</button>
+                  </form>
+                  <div *ngIf="registrationSuccess" class="alert alert-success mt-3" role="alert">
+                    Registration successful! Please proceed to login.
+                  </div>
+                  
+                  <p class="text-center mt-3">Already have an account? <a [routerLink]="['/login']">Login</a></p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  

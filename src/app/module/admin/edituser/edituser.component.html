@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+<div class="container-fluid py-4">
+    <div class="row">
+        <form (submit)="updateProfile()" #updateForm="ngForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="example-text-input" class="form-control-label">First name</label>
+                        <input name="name" class="form-control" type="text" value="{{user.name}}"
+                            [(ngModel)]="user.name">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="example-text-input" class="form-control-label">Last name</label>
+                        <input name="prenomEt" class="form-control" type="text" value="{{user.prenomEt}}"
+                            [(ngModel)]="user.prenomEt">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="example-text-input" class="form-control-label">CIN</label>
+                        <input name="cin" class="form-control" type="text" value="{{user.cin}}" [(ngModel)]="user.cin">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="example-text-input" class="form-control-label">Email address</label>
+                        <input name="email" class="form-control" type="email" value="{{user.email}}"
+                            [(ngModel)]="user.email">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="example-text-input" class="form-control-label">Date de Naissance</label>
+                        <input name="dataNaissance" class="form-control" type="date" value="{{user.dataNaissance}}"
+                            [(ngModel)]="user.dataNaissance">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="example-text-input" class="form-control-label">School</label>
+                        <input name="ecole" class="form-control" type="text" value="{{user.ecole}}"
+                            [(ngModel)]="user.ecole">
+                    </div>
+                </div>
+
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Edit User</button>
+        </form>
+    </div>
+</div>

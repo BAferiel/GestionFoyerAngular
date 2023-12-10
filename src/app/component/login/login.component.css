@@ -1,0 +1,6 @@
+/* Add styles for dirty-touched state */
+.is-dirty-touched {
+    color: red; /* Set the border color to red */
+}
+
+/* Add styles for invalid state */

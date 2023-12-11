@@ -21,7 +21,7 @@
 
 
 .ng-valid::after {
-    content: '✔'; 
+  
     color: green;
     position: absolute;
     right: 10px;
@@ -30,7 +30,7 @@
     font-size: 1.2em;
   }
   .ng-invalid.ng-dirty:not(.ng-valid)::after {
-    content: '✖'; 
+  
     color: red;
     position: absolute;
     right: 10px;

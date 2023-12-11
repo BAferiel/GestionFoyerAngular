@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <app-sidebars></app-sidebars>
+        </div>
+        <div class="col-md-9">
+            <div class="add-chambre-container">
+                <form (ngSubmit) = "onSubmit()" #updateForm="ngForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Nom de Bloc:</label>
+                                <input  class="form-control" type="text"
+                                        id="nomBloc" placeholder="Nom Bloc" pattern="[a-zA-Z ]*" #nom="ngModel" [(ngModel)] = "bloc.nomBloc" required name="NomBloc">
+                                <div class="alert alert-danger" role="alert" *ngIf="nom.invalid && (nom.dirty || nom.touched)">
+                                    Ce champ est obligatoire.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Capacite de Bloc:</label>
+                                    <input type="number" class="form-control" id="capaciteBloc" placeholder="Capacite du Bloc" required min="1" name="capaciteBloc" #capacite="ngModel" [(ngModel)] = "bloc.capaciteBloc">
+                                    <div class="alert alert-danger" role="alert" *ngIf="capacite.invalid && (capacite.dirty || capacite.touched)" >
+                                        Ce champ est obligatoire.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" [disabled]="!nom.valid || !capacite.valid">Modifier</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

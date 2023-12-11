@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <app-sidebars></app-sidebars>
+        </div>
+        <div class="col-md-9">
+            <section class="py-5">
+                <div class="container px-4 px-lg-5 mt-5 justify-content-around">
+                    <div class="card">
+                        <div class="table-responsive">
+                            <form class="d-flex" role="search"  >
+                                <input class="form-control me-2" type="search" name="recherchenom" [(ngModel)]=" rechercheFoyer" placeholder="Recherche Foyer" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Rechercher</button>
+                            </form>
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Numéro de chambre</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+                                    <th class="text-secondary opacity-7"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor = "let foyer of foyers | recherche : rechercheFoyer">
+                                    <td class="align-middle text-center">
+                                        <p class="text-xs font-weight-bold mb-0">{{foyer.idfFoyer}}</p>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <p class="text-xs font-weight-bold mb-0">{{foyer.nomFoyer}}</p>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <p class="text-xs font-weight-bold mb-0">{{foyer.capaciteFoyer}}</p>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <ul>
+                                            <li *ngFor="let bloc of foyer.blocs">
+                                                {{bloc.idBloc}} - {{bloc.nomBloc}} - {{bloc.capaciteBloc}}
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td class="button-container">
+                                        <button  [routerLink]="['/foyerList/updateFoyer',foyer.idfFoyer]"  type="button" class="btn bg-gradient-info" >Modifier</button>
+                                        <button type="button" class="btn btn-danger" (click)="deleteFoyer($event,foyer)" >Supprimer</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                          <button type="button" class="btn btn-success" (click)="goToAjout()">Ajouter Foyer</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+

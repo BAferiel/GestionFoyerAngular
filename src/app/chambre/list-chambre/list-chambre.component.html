@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+<app-sidebars></app-sidebars>
+    </div>
+    <div class="col-md-9">
+<section class="py-5">
+  <div class="container px-4 px-lg-5 mt-5 justify-content-around">
+    <div class="card">
+      <div class="table-responsive">
+        <table class="table align-items-center mb-0">
+          <thead>
+          <tr>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Numéro de chambre</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+            <th class="text-secondary opacity-7"></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let chambre of chambres">
+            <td class="align-middle text-center">
+              <p class="text-xs font-weight-bold mb-0">{{ chambre.idChambre }}</p>
+            </td>
+            <td class="align-middle text-center">
+              <p class="text-xs font-weight-bold mb-0">{{ chambre.numChambre }}</p>
+            </td>
+            <td class="align-middle text-center">
+              <p class="text-xs font-weight-bold mb-0">{{ chambre.typeC }}</p>
+            </td>
+            <td class="button-container">
+              <button  [routerLink]="['/chambrelist/addChambre', { edit: true, chambre: stringifyChambre(chambre) }]" type="button" class="btn bg-gradient-info" >Modifier</button>
+              <button type="button" class="btn btn-danger" (click)="deleteChambre(chambre)" >Supprimer</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <button type="button" class="btn btn-success" [routerLink]="['/chambrelist/addChambre']">Ajouter Chambre</button>
+      </div>
+    </div>
+  </div>
+</section>
+    </div>
+  </div>
+</div>

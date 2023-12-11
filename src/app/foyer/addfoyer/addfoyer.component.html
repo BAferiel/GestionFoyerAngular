@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <app-sidebars></app-sidebars>
+    </div>
+    <div class="col-md-9">
+
+        <form  >
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="example-text-input" class="form-control-label">Nom de Foyer:</label>
+                  <input type="text" class="form-control" id="nomFoyer"
+                         placeholder="Nom Foyer" pattern="[a-zA-Z ]*" [(ngModel)] = "foyer.nomFoyer" required name="nomFoyer">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="form-group">
+                    <label for="example-text-input" class="form-control-label">Capacité de Foyer:</label>
+                    <input type="number" class="form-control" id="capaciteFoyer" placeholder="Capacite du Foyer"
+                           required min="0" name="capaciteFoyer" [(ngModel)] = "foyer.capaciteFoyer">
+                  </div>
+                </div>
+              </div>
+            </div>
+          <button type="submit" class="btn btn-primary btn-block" (click)="saveFoyer()" [routerLink]="['/foyerList']">Ajouter</button>
+          </form>
+      </div>
+  </div>
+    </div>

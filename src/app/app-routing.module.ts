@@ -23,8 +23,11 @@ const routes: Routes = [
     data: { roles: 'ROLE_ADMIN' },
     loadChildren: () => import('./module/admin/admin.module').then(m => m.AdminModule)
   },
-/*   { path: '', redirectTo: '/welcome', pathMatch: 'full' }, */
   { path: '', redirectTo: '/register', pathMatch: 'full'},
+  { path: 'chambrelist', loadChildren: () => import('./chambre/chambre.module').then(c => c.ChambreModule) },
+  { path:'universites',  loadChildren:() =>  import('./univercite/univercite.module').then((u) => u.UniverciteModule),},
+  { path: 'blocList',  loadChildren:() =>  import('./bloc/bloc.module').then((b) => b.BlocModule),},
+  { path: 'foyerList',  loadChildren:() =>  import('./foyer/foyer.module').then((f) => f.FoyerModule),}
 ];
 
 @NgModule({

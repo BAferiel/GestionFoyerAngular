@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+<app-sidebars></app-sidebars>
+    </div>
+    <div class="col-md-9">
+<div class="add-chambre-container">
+  <h2>{{ isEdit ? 'Modifier' : 'Ajouter' }} une Chambre</h2>
+
+  <div *ngIf="isChambreAdded; else chambreForm" class="success-message">
+    <p>Chambre {{ isEdit ? 'Modifiée' : 'Ajoutée' }} avec succès!</p>
+  </div>
+
+  <ng-template #chambreForm>
+    <form (submit)="addChambre()" #updateForm="ngForm">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="example-text-input" class="form-control-label">Numéro de la chambre:</label>
+            <input  class="form-control" type="number"
+                   id="numChambre"
+                   name="numChambre"
+                   [(ngModel)]="newChambre.numChambre"
+                   required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <div class="form-group">
+              <label for="example-text-input" class="form-control-label">Type de chambre:</label>
+              <select id="typeC" name="typeC" class="form-control" [(ngModel)]="newChambre.typeC" required>
+                <option value="SINGLE">SINGLE</option>
+                <option value="DOUBLE">DOUBLE</option>
+                <option value="TRIPLE">TRIPLE</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">{{ getButtonLabel() }}</button>
+    </form>
+  </ng-template>
+</div>
+    </div>
+  </div>
+</div>

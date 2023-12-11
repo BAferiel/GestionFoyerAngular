@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <app-sidebars></app-sidebars>
+        </div>
+        <div class="col-md-9">
+            <section class="py-5">
+                <div class="container px-4 px-lg-5 mt-5 justify-content-around">
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nom de Bloc</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Capacité de Bloc</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre des Chambres</th>
+                                    <th class="text-secondary opacity-7"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor = "let bloc of blocs">
+                                    <td class="align-middle text-center">
+                                        <p class="text-xs font-weight-bold mb-0">{{bloc.idBloc}}</p>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <p class="text-xs font-weight-bold mb-0">{{bloc.nomBloc}} </p>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <p class="text-xs font-weight-bold mb-0">{{bloc.capaciteBloc}}</p>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <p class="text-xs font-weight-bold mb-0">{{bloc.chambres.length}}</p>
+                                    </td>
+                                    <td class="button-container">
+                                        <button   type="button" class="btn bg-gradient-info" [routerLink]="['/blocList/updateBloc',bloc.idBloc]">Modifier</button>
+                                        <button type="button" class="btn btn-danger" (click)="DeleteBloc(bloc)" >Supprimer</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <button type="button" class="btn btn-success" [routerLink]="['/blocList/addBloc']">Ajouter Bloc</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

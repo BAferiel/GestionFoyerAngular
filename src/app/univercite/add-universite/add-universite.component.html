@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <app-sidebars></app-sidebars>
+        </div>
+        <div class="col-md-9">
+
+                    <form #f="ngForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-control-label">Nom de l'Université:</label>
+                                    <input  class="form-control"
+                                            name="nomUniversite"
+                                            [(ngModel)]="universite.nomUniversity"
+                                            #nomuniver="ngModel"  placeholder="nom"
+                                            pattern="[a-zA-Z]*" required>
+                                    <div *ngIf="nomuniver.invalid && (nomuniver.dirty || nomuniver.touched)">
+                                        <div *ngIf="nomuniver?.errors?.['pattern']" class="error-message">
+                                            Veuillez saisir uniquement des lettres.
+                                        </div>
+                                        <div *ngIf="nomuniver.errors?.['required']" class="error-message">
+                                            Ce champ est obligatoire.
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label  class="form-control-label">Adresse de l'Université:</label>
+                                        <input type="text" class="form-control"
+                                               id="exampleInputPassword1" name="addresse"
+                                               [(ngModel)]="universite.adress"
+                                               #addressuniver="ngModel" placeholder="adresse" required>
+                                        <div *ngIf="addressuniver.invalid && (addressuniver.dirty || addressuniver.touched)">
+                                            <div *ngIf="addressuniver.errors?.['required']" class="error-message">
+                                                Ce champ est obligatoire.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label  class="form-control-label">Foyer affecté:</label>
+                                                <label  class="form-control-label">ID Foyer</label>
+                                                <select id="idfoyer" name="idfoyer" class="form-control" [(ngModel)]="revenu.idfFoyer" required>
+                                                    <option value="1" *ngFor="let u of foyer" [value]="u.idfFoyer">{{u.idfFoyer}}</option>
+                                                </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block " (click)=" addUniversite()" [disabled]="f.invalid">Submit</button>
+                    </form>
+            </div>
+        </div>
+    </div>
+

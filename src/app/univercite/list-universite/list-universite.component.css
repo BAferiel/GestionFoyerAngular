@@ -1,0 +1,45 @@
+
+.marge-a-gauche {
+    margin-left: 17rem; 
+    /*margin-right: -0.75rem;/* Taille équivalente à ml-3 dans Bootstrap */
+  }
+  input.ng-invalid.ng-dirty.ng-touched,
+  select.ng-invalid.ng-dirty.ng-touched,
+  textarea.ng-invalid.ng-dirty.ng-touched {
+  border-color: red; 
+  box-shadow: 0 0 5px red; 
+}
+
+ input.ng-valid.ng-dirty.ng-touched,
+ select.ng-valid.ng-dirty.ng-touched,
+ textarea.ng-valid.ng-dirty.ng-touched {
+  border-color: green; 
+  box-shadow: 0 0 5px green; 
+}
+
+
+.error-message {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px; 
+  }
+
+
+.ng-valid::after {
+    content: '✔'; 
+    color: green;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+  }
+  .ng-invalid.ng-dirty:not(.ng-valid)::after {
+    content: '✖'; 
+    color: red;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+  }

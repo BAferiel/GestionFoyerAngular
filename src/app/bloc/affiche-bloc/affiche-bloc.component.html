@@ -9,13 +9,14 @@
                 <div class="container px-4 px-lg-5 mt-5 justify-content-around">
                     <div class="card">
                         <div class="table-responsive">
+                            <button type="button" class="btn btn-success" [routerLink]="['/blocList/addBloc']"> <i class="fas fa-plus"></i> Add Bloc</button>
                             <table class="table align-items-center mb-0">
                                 <thead>
                                 <tr>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nom de Bloc</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Capacité de Bloc</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre des Chambres</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Bloc Name</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Bloc Capacity</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Number of rooms</th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
                                 </thead>
@@ -34,13 +35,13 @@
                                         <p class="text-xs font-weight-bold mb-0">{{bloc.chambres.length}}</p>
                                     </td>
                                     <td class="button-container">
-                                        <button   type="button" class="btn bg-gradient-info" [routerLink]="['/blocList/updateBloc',bloc.idBloc]">Modifier</button>
-                                        <button type="button" class="btn btn-danger" (click)="DeleteBloc(bloc)" >Supprimer</button>
+                                        <button   type="button" class="btn bg-gradient-info" [routerLink]="['/blocList/updateBloc',bloc.idBloc]"><i class="fas fa-pencil-alt"></i> Update</button>
+                                        <button type="button" class="btn btn-danger" (click)="DeleteBloc(bloc)"> <i class="fas fa-trash"></i> Delete</button>
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
-                            <button type="button" class="btn btn-success" [routerLink]="['/blocList/addBloc']">Ajouter Bloc</button>
+                            
                         </div>
                     </div>
                 </div>

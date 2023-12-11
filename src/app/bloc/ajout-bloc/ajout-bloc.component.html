@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top: 200px;">
     <div class="row">
         <div class="col-md-3">
             <app-sidebars></app-sidebars>
@@ -10,27 +10,27 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="example-text-input" class="form-control-label">Nom de Bloc:</label>
+                                    <label for="example-text-input" class="form-control-label">Bloc Name</label>
                                     <input  class="form-control" type="text"
-                                            id="nomBloc" placeholder="Nom Bloc" pattern="[a-zA-Z ]*" #nom="ngModel" [(ngModel)] = "bloc.nomBloc" required name="NomBloc">
+                                            id="nomBloc" placeholder="Bloc Name" pattern="[a-zA-Z ]*" #nom="ngModel" [(ngModel)] = "bloc.nomBloc" required name="NomBloc">
                                     <div class="alert alert-danger" role="alert" *ngIf="nom.invalid && (nom.dirty || nom.touched)">
-                                        Ce champ est obligatoire.
+                                        this field is required
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-group">
-                                        <label for="example-text-input" class="form-control-label">Capacite de Bloc:</label>
-                                        <input type="number" class="form-control" id="capaciteBloc" placeholder="Capacite du Bloc" required min="1" name="capaciteBloc" #capacite="ngModel" [(ngModel)] = "bloc.capaciteBloc">
+                                        <label for="example-text-input" class="form-control-label">Bloc Capacity</label>
+                                        <input type="number" class="form-control" id="capaciteBloc" placeholder="Bloc Capacity" required min="1" name="capaciteBloc" #capacite="ngModel" [(ngModel)] = "bloc.capaciteBloc">
                                         <div class="alert alert-danger" role="alert" *ngIf="capacite.invalid && (capacite.dirty || capacite.touched)" >
-                                            Ce champ est obligatoire.
+                                            this field is required
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block" [disabled]="!nom.valid || !capacite.valid">Ajouter</button>
+                        <button type="submit" class="btn btn-primary btn-block" [disabled]="!nom.valid || !capacite.valid"> <i class="fas fa-plus"></i> Add</button>
                     </form>
             </div>
         </div>

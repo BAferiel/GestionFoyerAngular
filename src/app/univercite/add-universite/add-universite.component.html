@@ -10,40 +10,40 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-control-label">Nom de l'Université:</label>
+                                    <label class="form-control-label">University Name</label>
                                     <input  class="form-control"
                                             name="nomUniversite"
                                             [(ngModel)]="universite.nomUniversity"
-                                            #nomuniver="ngModel"  placeholder="nom"
+                                            #nomuniver="ngModel"  placeholder="University Name"
                                             pattern="[a-zA-Z]*" required>
                                     <div *ngIf="nomuniver.invalid && (nomuniver.dirty || nomuniver.touched)">
                                         <div *ngIf="nomuniver?.errors?.['pattern']" class="error-message">
-                                            Veuillez saisir uniquement des lettres.
+                                            Please enter only letters
                                         </div>
                                         <div *ngIf="nomuniver.errors?.['required']" class="error-message">
-                                            Ce champ est obligatoire.
+                                            this field is required
                                         </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="form-group">
-                                        <label  class="form-control-label">Adresse de l'Université:</label>
+                                        <label  class="form-control-label">University Address</label>
                                         <input type="text" class="form-control"
                                                id="exampleInputPassword1" name="addresse"
                                                [(ngModel)]="universite.adress"
-                                               #addressuniver="ngModel" placeholder="adresse" required>
+                                               #addressuniver="ngModel" placeholder="University Address" required>
                                         <div *ngIf="addressuniver.invalid && (addressuniver.dirty || addressuniver.touched)">
                                             <div *ngIf="addressuniver.errors?.['required']" class="error-message">
-                                                Ce champ est obligatoire.
+                                                this field is required
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <div class="form-group">
-                                                <label  class="form-control-label">Foyer affecté:</label>
-                                                <label  class="form-control-label">ID Foyer</label>
+                                                <label  class="form-control-label">Affected Dorm</label>
+                                                <label  class="form-control-label">Dorm ID</label>
                                                 <select id="idfoyer" name="idfoyer" class="form-control" [(ngModel)]="revenu.idfFoyer" required>
                                                     <option value="1" *ngFor="let u of foyer" [value]="u.idfFoyer">{{u.idfFoyer}}</option>
                                                 </select>
@@ -54,7 +54,7 @@
                             </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block " (click)=" addUniversite()" [disabled]="f.invalid">Submit</button>
+                        <button type="submit" class="btn btn-primary btn-block " (click)=" addUniversite()" [disabled]="f.invalid"> <i class="fas fa-plus"></i> Add</button>
                     </form>
             </div>
         </div>

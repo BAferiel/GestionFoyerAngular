@@ -29,11 +29,11 @@ export class AddChambreComponent implements OnInit{
   addChambre() {
     if (this.isEdit) {
       this.cs.updateChambre(this.newChambre).subscribe(() => {
-        this.showSuccessMessageAndNavigate('Modifiée');
+        this.showSuccessMessageAndNavigate('Updated');
       });
     } else {
       this.cs.addChambre(this.newChambre).subscribe(() => {
-        this.showSuccessMessageAndNavigate('Ajoutée');
+        this.showSuccessMessageAndNavigate('Added');
       });
     }
   }
@@ -48,6 +48,6 @@ export class AddChambreComponent implements OnInit{
   }
 
   getButtonLabel(): string {
-    return this.isEdit ? 'Modifier Chambre' : 'Ajouter Chambre';
+    return this.isEdit ? 'Updating room' : 'Adding room';
   }
 }

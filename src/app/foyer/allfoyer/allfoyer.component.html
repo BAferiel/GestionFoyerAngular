@@ -13,11 +13,12 @@
                                 <input class="form-control me-2" type="search" name="recherchenom" [(ngModel)]=" rechercheFoyer" placeholder="Recherche Foyer" aria-label="Search">
                                 <button class="btn btn-outline-success" type="submit">Rechercher</button>
                             </form>
+                            <button type="button" class="btn btn-success" (click)="goToAjout()" style="margin-top: 50px;"> <i class="fas fa-plus"></i>Add Dorm</button>
                             <table class="table align-items-center mb-0">
                                 <thead>
                                 <tr>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Numéro de chambre</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Room Number</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
@@ -41,13 +42,13 @@
                                         </ul>
                                     </td>
                                     <td class="button-container">
-                                        <button  [routerLink]="['/foyerList/updateFoyer',foyer.idfFoyer]"  type="button" class="btn bg-gradient-info" >Modifier</button>
-                                        <button type="button" class="btn btn-danger" (click)="deleteFoyer($event,foyer)" >Supprimer</button>
+                                        <button  [routerLink]="['/foyerList/updateFoyer',foyer.idfFoyer]"  type="button" class="btn bg-gradient-info" > <i class="fas fa-pencil-alt"></i>Update</button>
+                                        <button type="button" class="btn btn-danger" (click)="deleteFoyer($event,foyer)" > <i class="fas fa-trash"></i>Delete</button>
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
-                          <button type="button" class="btn btn-success" (click)="goToAjout()">Ajouter Foyer</button>
+                          
                         </div>
                     </div>
                 </div>

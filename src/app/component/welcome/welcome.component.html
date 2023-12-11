@@ -1,26 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container px-4 px-lg-5">
+<body>
+    <app-navbar></app-navbar>
 
-
-    </div>
-</nav>
-<app-sidebars></app-sidebars>
-<!-- Header -->
-<header class="bg-dark py-5">
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder text-white">Welcome  {{user.name}}</h1>
-            <p class="lead fw-normal text-white-50 mb-0">
-                {{ isLoggedIn ? 'You are logged in.' : 'Please log in to access your profile.' }}
-            </p>
+    <!-- Header with Slideshow -->
+    <div class="home-slider owl-carousel js-fullheight">
+        <!-- Slide 1 -->
+        <div class="slider-item js-fullheight" style="background-image: url('../assets/img/bg-profile.jpg'), url('../assets/img/home-decor-2.jpg');">
+            <div class="overlay"></div>
+            <div class="container d-flex align-items-center justify-content-center">
+                <div class="row no-gutters slider-text js-fullheight" style="margin-top: 150px;">
+                    <div class="col-md-12 ftco-animate text-center">
+                        <h1 class="display-7 fw-bolder text-dark">Welcome  {{user.name}}</h1>
+                        <p class="lead fw-normal text-white-50 mb-4">
+                            {{ isLoggedIn ? 'You are logged in.' : 'Please log in to access your profile.' }}
+                        </p>
+                        <h2 class="display-6 mb-4" style="max-width: 600px; margin: 0 auto; font-size: 24px;">Optimizing Campus Living with Smart Dorm Management</h2>
+                        <button class="btn btn-primary">Reservation</button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</header>
 
-<section class="py-5">
-    <div class="container px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-center">
-
-        </div>
     </div>
-</section>
+
+
+
+</body>

@@ -9,11 +9,12 @@
   <div class="container px-4 px-lg-5 mt-5 justify-content-around">
     <div class="card">
       <div class="table-responsive">
+        <button type="button" class="btn btn-success" [routerLink]="['/chambrelist/addChambre']"> <i class="fas fa-plus"></i> Add Room</button>
         <table class="table align-items-center mb-0">
           <thead>
           <tr>
             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
-            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Numéro de chambre</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Room Number</th>
             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
             <th class="text-secondary opacity-7"></th>
           </tr>
@@ -30,13 +31,13 @@
               <p class="text-xs font-weight-bold mb-0">{{ chambre.typeC }}</p>
             </td>
             <td class="button-container">
-              <button  [routerLink]="['/chambrelist/addChambre', { edit: true, chambre: stringifyChambre(chambre) }]" type="button" class="btn bg-gradient-info" >Modifier</button>
-              <button type="button" class="btn btn-danger" (click)="deleteChambre(chambre)" >Supprimer</button>
+              <button  [routerLink]="['/chambrelist/addChambre', { edit: true, chambre: stringifyChambre(chambre) }]" type="button" class="btn bg-gradient-info" ><i class="fas fa-pencil-alt"></i> Update</button>
+              <button type="button" class="btn btn-danger" (click)="deleteChambre(chambre)" > <i class="fas fa-trash"></i>Delete</button>
             </td>
           </tr>
           </tbody>
         </table>
-        <button type="button" class="btn btn-success" [routerLink]="['/chambrelist/addChambre']">Ajouter Chambre</button>
+        
       </div>
     </div>
   </div>

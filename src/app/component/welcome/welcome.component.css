@@ -1,0 +1,12 @@
+/* welcome.component.css */
+
+.home-slider {
+    height: 100vh;
+}
+
+.slider-item {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}

@@ -10,22 +10,22 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="example-text-input" class="form-control-label">Nom de Foyer:</label>
+                  <label for="example-text-input" class="form-control-label">Dorm Name</label>
                   <input type="text" class="form-control" id="nomFoyer"
-                         placeholder="Nom Foyer" pattern="[a-zA-Z ]*" [(ngModel)] = "foyer.nomFoyer" required name="nomFoyer">
+                         placeholder="Dorm Name" pattern="[a-zA-Z ]*" [(ngModel)] = "foyer.nomFoyer" required name="nomFoyer">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Capacité de Foyer:</label>
-                    <input type="number" class="form-control" id="capaciteFoyer" placeholder="Capacite du Foyer"
+                    <label for="example-text-input" class="form-control-label">Dorm Capacity</label>
+                    <input type="number" class="form-control" id="capaciteFoyer" placeholder="Dorm Capacity"
                            required min="0" name="capaciteFoyer" [(ngModel)] = "foyer.capaciteFoyer">
                   </div>
                 </div>
               </div>
             </div>
-          <button type="submit" class="btn btn-primary btn-block" (click)="saveFoyer()" [routerLink]="['/foyerList']">Ajouter</button>
+          <button type="submit" class="btn btn-primary btn-block" (click)="saveFoyer()" [routerLink]="['/foyerList']"> <i class="fas fa-plus"></i> Add</button>
           </form>
       </div>
   </div>

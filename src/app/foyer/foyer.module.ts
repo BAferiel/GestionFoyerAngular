@@ -12,9 +12,9 @@ import {CoreModule} from "../module/core/core.module";
 
 @NgModule({
   declarations: [
+      UpdatefoyerComponent,
       AddfoyerComponent,
       AllfoyerComponent,
-      UpdatefoyerComponent,
       RecherchePipe,
   ],
     imports: [

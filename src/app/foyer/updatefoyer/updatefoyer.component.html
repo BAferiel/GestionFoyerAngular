@@ -3,22 +3,22 @@
 </div>
 
 <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-  <form (ngSubmit) = "onSubmit()" style="width: 500px; height: 500px;">
+  <form  style="width: 500px; height: 500px;">
 
 
       <div class="form-group">
           <label>Nom Foyer</label>
-          <input type="text" class="form-control" id="nomFoyer" placeholder="Nom Foyer" pattern="[a-zA-Z ]*" [(ngModel)] = "foyer.nomFoyer" required name="nomFoyer">   
+          <input type="text" class="form-control" id="nomFoyer" placeholder="Nom Foyer" pattern="[a-zA-Z ]*" [(ngModel)] = "foyer.nomFoyer" required name="nomFoyer" required>   
       </div>
 
 
       <div class="form-group">
           <label>Capacite Foyer</label>
-          <input type="number" class="form-control" id="capaciteFoyer" placeholder="Capacite du Foyer" required min="0" name="capaciteFoyer" [(ngModel)] = "foyer.capaciteFoyer">
+          <input type="number" class="form-control" id="capaciteFoyer" placeholder="Capacite du Foyer" required min="0" name="capaciteFoyer" [(ngModel)] = "foyer.capaciteFoyer" required>
       </div>
 
 
-      <button type="submit" class="btn btn-outline-success">Modifier</button>
+      <button type="submit" class="btn btn-outline-success" (click)="updateFoyer1()" [routerLink]="['/foyerList']">Modifier</button>
 
 
     </form>

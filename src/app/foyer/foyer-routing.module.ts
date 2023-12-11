@@ -12,8 +12,8 @@ const routes: Routes = [
     path: 'addFoyer', component: AddfoyerComponent,
   },
   {
-    path: 'updateFoyer', component:UpdatefoyerComponent,
-  }
+    path: 'updateFoyer/:idfFoyer', component:UpdatefoyerComponent,
+  },
 ];
 
 @NgModule({

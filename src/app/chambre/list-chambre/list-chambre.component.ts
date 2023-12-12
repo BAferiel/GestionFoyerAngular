@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectorRef, Component} from '@angular/core';
 import {Chambre} from "../../models/chambre.model";
 import {ChambreService} from "../../Services/chambre.service";
 import {Router} from "@angular/router";
@@ -12,7 +12,7 @@ export class ListChambreComponent {
   chambres!: Chambre[];
 
 
-  constructor(private router:Router, private cs:ChambreService ){}
+  constructor(private router:Router, private cs:ChambreService){}
 
   ngOnInit(){
     this.fetchChambres();
@@ -20,6 +20,7 @@ export class ListChambreComponent {
   fetchChambres() {
     this.cs.getChambres().subscribe((chambres: Chambre[]) => {
       this.chambres = chambres;
+      console.log(this.chambres);
     });
   }
 
@@ -31,5 +32,20 @@ export class ListChambreComponent {
 
   stringifyChambre(chambre: Chambre): string {
     return JSON.stringify(chambre);
+  }
+
+  scheduleCleaning(idChambre: number): void {
+    console.log('idChambre:', idChambre);
+    this.cs.scheduleCleaning(idChambre).subscribe(
+      (chambre) => {
+        // Handle success, if needed
+        console.log('Cleaning scheduled successfully', chambre);
+        this.fetchChambres();
+      },
+      (error) => {
+        // Handle error, if needed
+        console.error('Error scheduling cleaning', error);
+      }
+    );
   }
 }

@@ -6,16 +6,21 @@
     </div>
     <div class="col-md-9">
 <section class="py-5">
-  <div class="container px-4 px-lg-5 mt-5 justify-content-around">
+  <div class="container px-7 px-lg-1 mt-1 justify-content-around">
     <div class="card">
       <div class="table-responsive">
         <button type="button" class="btn btn-success" [routerLink]="['/chambrelist/addChambre']"> <i class="fas fa-plus"></i> Add Room</button>
+        <!-- ... (previous code) ... -->
+
         <table class="table align-items-center mb-0">
           <thead>
           <tr>
             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Room Number</th>
             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Last Cleaning Date</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Next Scheduled Cleaning Date</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Cleaning Status</th>
             <th class="text-secondary opacity-7"></th>
           </tr>
           </thead>
@@ -30,14 +35,26 @@
             <td class="align-middle text-center">
               <p class="text-xs font-weight-bold mb-0">{{ chambre.typeC }}</p>
             </td>
+            <td class="align-middle text-center">
+              <p class="text-xs font-weight-bold mb-0">{{ chambre.lastCleaningDate | date:'short' }}</p>
+            </td>
+            <td class="align-middle text-center">
+              <p class="text-xs font-weight-bold mb-0">{{ chambre.nextScheduledCleaningDate | date:'short' }}</p>
+            </td>
+            <td class="align-middle text-center">
+              <p class="text-xs font-weight-bold mb-0">{{ chambre.cleaningScheduled ? 'Scheduled' : 'Not Scheduled' }}</p>
+            </td>
             <td class="button-container">
               <button  [routerLink]="['/chambrelist/addChambre', { edit: true, chambre: stringifyChambre(chambre) }]" type="button" class="btn bg-gradient-info" ><i class="fas fa-pencil-alt"></i> Update</button>
               <button type="button" class="btn btn-danger" (click)="deleteChambre(chambre)" > <i class="fas fa-trash"></i>Delete</button>
+              <button type="button" class="btn btn-primary" (click)="scheduleCleaning(chambre.idChambre)">
+                <i class="fas fa-clock"></i> Schedule Cleaning
+              </button>
             </td>
           </tr>
           </tbody>
         </table>
-        
+
       </div>
     </div>
   </div>
@@ -45,3 +62,5 @@
     </div>
   </div>
 </div>
+
+

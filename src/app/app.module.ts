@@ -13,6 +13,8 @@ import { WelcomeComponent } from './component/welcome/welcome.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { CoreModule } from './module/core/core.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { CoreModule } from './module/core/core.module';
       allowedDomains: ['localhost:4200'], // replace with your actual API domain
       disallowedRoutes: ['localhost:4200/login'], // replace with your login route
     },
-  }),],
+  }),ReactiveFormsModule,NgxCaptchaModule],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -11,6 +11,7 @@ import { Chambre, TypeChambre } from '../../models/chambre.model';
 export class AfficheBlocComponent implements OnInit{
   blocs!: Bloc[];
   chambres:Chambre[]=[];
+  rechercheBloc='';
 
   constructor(private blocService: ServiceblocService,
     private router : Router) {}

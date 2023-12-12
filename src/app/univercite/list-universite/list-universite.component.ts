@@ -15,6 +15,7 @@ export class ListUniversiteComponent implements OnInit{
   universite:Universite=new Universite();
   revenu:Foyer=new Foyer();
   foyer:Foyer[]=[];
+  rechercheUniversite='';
 
   universitrtoupdate:Universite={
     idUniversite:0,

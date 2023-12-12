@@ -1,0 +1,53 @@
+ <app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      
+    </div>
+    <div class="col-md-9">
+      <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5 justify-content-around">
+          <div class="card">
+            <div class="table-responsive">
+              <button type="button" class="btn btn-success" [routerLink]="['/reservation/listreservation']" style="margin-top: 50px;">
+                <i class="fas fa-plus"></i> List Reservation
+              </button>
+              <table class="table align-items-center mb-0">
+                <thead>
+                  <tr>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID Reservation</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date Reservation</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chambre</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">University</th>
+                    <th class="text-secondary opacity-7"></th>
+                  </tr>
+                </thead>
+                <tbody>
+  <tr *ngFor="let singleReservation of reservations">
+    <td class="align-middle text-center">
+      <p class="text-xs font-weight-bold mb-0">{{ singleReservation.idReservation }}</p>
+    </td>
+    <td class="align-middle text-center">
+      <p class="text-xs font-weight-bold mb-0">{{ singleReservation.anneUniversitaire| date }}</p>
+    </td>
+    <td class="align-middle text-center">
+      <div *ngFor="let chambre of singleReservation.Chambres">
+        <p class="text-xs font-weight-bold mb-0">{{ chambre.typeC }}</p>
+      </div>
+    </td>
+    <td class="align-middle text-center">
+      <button type="button" class="btn btn-warning" [routerLink]="['/reservation/listreservation', singleReservation.idReservation]">
+        <i class="fas fa-pencil-alt"></i> Update
+      </button>
+      <!-- Other buttons or actions for each reservation -->
+    </td>
+  </tr>
+</tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+     
+    </div>
+
+    <div class="col-md-9">
+      <div class="form-group form-group-inline">
+        <label for="universityDropdown" class="form-control-label">University:</label>
+        <select id="universityDropdown" [(ngModel)]="selectedUniversity" (ngModelChange)="fetchFoyerDetails(selectedUniversity)"
+          class="form-control form-control-lg">
+          <option value="" disabled>Select an option</option>
+          <option *ngFor="let university of universities" [value]="university.nomUniversity">{{ university.nomUniversity }}</option>
+        </select>
+        <p *ngIf="selectedUniversity">Selected University: {{ selectedUniversity }}</p>
+      </div>
+
+      <div class="form-group form-group-inline">
+        <label for="typeChambre">Type of Chambre:</label>
+        <select id="typeChambre" [(ngModel)]="typeChambre" (change)="fetchChambresByType()" class="form-control form-control-lg">
+          <option value="" disabled>Select a type</option>
+          <option *ngFor="let type of typeChambreValues" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+
+      <!-- Display fetched Chambres -->
+      <div *ngIf="chambres.length > 0">
+        <h2>Chambres:</h2>
+        <ul>
+          <li *ngFor="let chambre of chambres">
+            ID: {{ chambre.idChambre }} - Num: {{ chambre.numChambre }} - Type: {{ chambre.typeC }}
+          </li>
+        </ul>
+      </div>
+
+      <button (click)="Reservation(selectedChambre, selectedReservation, selectEtudiant)" class="btn btn-primary btn-submit"
+        [routerLink]="['/reservation/listreservation']">
+        <i class="fas fa-pencil-alt"></i> Submit
+      </button>
+    </div>
+  </div>
+</div>

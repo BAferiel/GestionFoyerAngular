@@ -1,0 +1,73 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      
+    </div>
+    <div class="col-md-9">
+      <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5 justify-content-around">
+          <div class="card">
+            <div class="table-responsive">
+              <button type="button" class="btn btn-success" [routerLink]="['/reservation/addreservation']" style="margin-top: 50px;">
+                
+                <i class="fas fa-plus"></i> Add Reservation
+              </button>
+              <table class="table align-items-center mb-0">
+                <thead>
+                  <tr>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">id reservation</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">date reservation</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">chambre</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Validite</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">University</th>
+                    <th class="text-secondary opacity-7"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let reservation of reservations">
+                    <td class="align-middle text-center">
+                      <p class="text-xs font-weight-bold mb-0">{{ reservation.idReservation }}</p>
+                    </td>
+                    <td class="align-middle text-center">
+                      <p class="text-xs font-weight-bold mb-0">{{ reservation.anneUniversitaire | date }}</p>
+                    </td>
+                    <td class="align-middle text-center">
+                      <div *ngFor="let chambre of reservation.Chambres">
+                        <p class="text-xs font-weight-bold mb-0">{{ chambre.typeC }}</p>
+                      </div>
+                    </td>
+                    <td class="align-middle text-center">
+                      <p class="text-xs font-weight-bold mb-0">{{ reservation.estValide }}</p>
+                    </td>
+                    <td class="align-middle text-center">
+                      <div *ngFor="let user of reservation.Users">
+                        <p class="text-xs font-weight-bold mb-0">{{ user.ecole }}</p>
+                      </div>
+                    </td>
+                    <td class="align-middle text-center">
+                      <ul>
+                        <li *ngFor="let chambre of reservation.Chambres">
+                          {{ chambre.typeC }}
+                        </li>
+                      </ul>
+                    </td>
+                    <td class="align-middle text-center">
+                      <button type="button" class="btn btn-warning" [routerLink]="['/reservation/updateReservation', reservation.idReservation]">
+                        <i class="fas fa-pencil-alt"></i> Update
+                      </button>
+                      <button type="button" class="btn btn-danger" (click)="deleteReservation($event, reservation.idReservation)">
+                        <i class="fas fa-trash"></i> Delete
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

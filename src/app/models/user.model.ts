@@ -7,5 +7,5 @@ export class User {
     roles!: string;
     prenomEt?: string; 
     ecole?: string;
-    dataNaissance?: Date;
+    dataNaissance?: Date |string;
 }

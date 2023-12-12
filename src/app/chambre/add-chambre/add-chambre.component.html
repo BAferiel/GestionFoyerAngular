@@ -6,10 +6,10 @@
     </div>
     <div class="col-md-9">
 <div class="add-chambre-container">
-  <h2>{{ isEdit ? 'Modifier' : 'Ajouter' }} une Chambre</h2>
+  <h2>{{ isEdit ? 'Update' : 'Add' }} Room</h2>
 
   <div *ngIf="isChambreAdded; else chambreForm" class="success-message">
-    <p>Chambre {{ isEdit ? 'Modifiée' : 'Ajoutée' }} avec succès!</p>
+    <p>Room {{ isEdit ? 'Update' : 'Add' }} with success!</p>
   </div>
 
   <ng-template #chambreForm>
@@ -17,7 +17,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label for="example-text-input" class="form-control-label">Numéro de la chambre:</label>
+            <label for="example-text-input" class="form-control-label">Room number:</label>
             <input  class="form-control" type="number"
                    id="numChambre"
                    name="numChambre"
@@ -28,7 +28,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <div class="form-group">
-              <label for="example-text-input" class="form-control-label">Type de chambre:</label>
+              <label for="example-text-input" class="form-control-label">Room Type:</label>
               <select id="typeC" name="typeC" class="form-control" [(ngModel)]="newChambre.typeC" required>
                 <option value="SINGLE">SINGLE</option>
                 <option value="DOUBLE">DOUBLE</option>

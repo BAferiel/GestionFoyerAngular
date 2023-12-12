@@ -1,7 +1,7 @@
 export enum TypeChambre {
-  SINGLE = 'SINGLE',
+  SINGLE = 'SIMPLE',
   DOUBLE = 'DOUBLE',
-  SUITE = 'SUITE',
+  SUITE = 'TRIPLE',
 }
 
 export class Chambre {

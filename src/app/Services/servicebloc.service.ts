@@ -38,4 +38,7 @@ export class ServiceblocService {
     compterChambresParBloc(): Observable<number> {
       return this.httpClient.get<number>('http://localhost:8080/compterChambresParBloc');
     }
+    findByFoyer(nomF: number): Observable<Bloc[]> {
+    return this.httpClient.get<Bloc[]>('http://localhost:8080/findByFoyer/'+nomF);
+  }
 }

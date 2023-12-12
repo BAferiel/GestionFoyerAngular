@@ -21,7 +21,7 @@ import {RecherchePipe} from "./Search/recherche.pipe";
     CommonModule,
     BlocRoutingModule,
     CoreModule,
-      FormsModule
+    FormsModule
   ]
 })
 export class BlocModule { }

@@ -27,4 +27,8 @@ export class ChambreService {
   scheduleCleaning(idChambre: number): Observable<Chambre>{
     return this._http.put<Chambre>(`http://localhost:8080/cleaning/schedule/${idChambre}`, {});
   }
+  findByTypeCWhereAndCapacityChambreGreaterThanZero(typeChambre: string): Observable<Chambre[]> {
+    const capitalizedTypeChambre = typeChambre.toUpperCase();
+    return this._http.get<Chambre[]>("http://localhost:8080/findByTypeCWhereAndCapacityChambreGreaterThanZero/" + capitalizedTypeChambre);
+  }
 }

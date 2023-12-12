@@ -24,7 +24,7 @@ export class UserService {
 		const token = this.getToken();
 		const user = new User();
 		const decryptedToken = this.jwtHelper.decodeToken(token)['sub'].split(",");
-	
+
 		user.id = decryptedToken[0].split("=")[1].split();
 		user.cin = decryptedToken[6].split("=")[1];
 		user.name = decryptedToken[1].split("=")[1];
@@ -94,6 +94,9 @@ export class UserService {
 	deleteUser(id: number): Observable<any> {
 		const deleteProfileEndpoint = 'http://localhost:8080/api/user/delete/' + id;
 		return this.http.post(deleteProfileEndpoint,{"token":this.token},{ responseType: 'json' });
+	}
+	getuserbyid(id:number):Observable<User>{
+		return this.http.get<User>("http://localhost:8080/getEtudiant/"+id);
 	}
 
 }

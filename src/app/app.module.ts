@@ -16,6 +16,7 @@ import { CoreModule } from './module/core/core.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxCaptchaModule } from 'ngx-captcha';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,9 +25,9 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     RegistrationComponent,
     LoginComponent,
     WelcomeComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CoreModule,
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule,CoreModule,
     JwtModule.forRoot({
     config: {
       allowedDomains: ['localhost:4200'], // replace with your actual API domain

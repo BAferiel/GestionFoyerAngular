@@ -39,5 +39,9 @@ export class FoyerService {
   blocAffecterToFoyer(): Observable<Bloc>{
     return this._http.get<Bloc>('http://localhost:8080/foyers-with-bloc');
   }
+ getFoyerDetails(universiteNom: string): Observable<Foyer[]> {
+  return this._http.get<Foyer[]>('http://localhost:8080/getFoyersWithCapacity/'+universiteNom);
+}
 
 }
+

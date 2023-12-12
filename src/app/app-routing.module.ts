@@ -27,7 +27,9 @@ const routes: Routes = [
   { path: 'chambrelist', loadChildren: () => import('./chambre/chambre.module').then(c => c.ChambreModule) },
   { path:'universites',  loadChildren:() =>  import('./univercite/univercite.module').then((u) => u.UniverciteModule),},
   { path: 'blocList',  loadChildren:() =>  import('./bloc/bloc.module').then((b) => b.BlocModule),},
-  { path: 'foyerList',  loadChildren:() =>  import('./foyer/foyer.module').then((f) => f.FoyerModule),}
+  { path: 'foyerList',  loadChildren:() =>  import('./foyer/foyer.module').then((f) => f.FoyerModule),},
+  { path: 'reservation',  loadChildren:() =>  import('./reservation/reservation.module').then((r) => r.ReservationModule),}
+
 ];
 
 @NgModule({

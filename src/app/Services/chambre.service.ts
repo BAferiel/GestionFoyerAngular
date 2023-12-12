@@ -23,4 +23,8 @@ export class ChambreService {
   updateChambre(chambre: Chambre): Observable<Chambre> {
     return this._http.put<Chambre>("http://localhost:8080/updateChambre", chambre);
   }
+
+  scheduleCleaning(idChambre: number): Observable<any>{
+    return this._http.put<any>("http://localhost:8080/cleaning/schedule/${idChambre}", null);
+  }
 }

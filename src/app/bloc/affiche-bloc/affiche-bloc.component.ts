@@ -20,7 +20,9 @@ export class AfficheBlocComponent implements OnInit{
    this.getBlocsList();
    this.blocService.compterChambresParBloc().subscribe(
     (res: number) => {
-      this.chambres = [{ idChambre: 0, numChambre: res, typeC: TypeChambre.SINGLE }];
+      this.chambres = [{ idChambre: 0, numChambre: res, typeC: TypeChambre.SINGLE,lastCleaningDate: null, // Replace with default value or null
+        nextScheduledCleaningDate: null,
+        cleaningScheduled: false }];
     },
     (error) => {
       console.error('Error fetching chambre count:', error);

@@ -35,12 +35,16 @@ export class ListChambreComponent {
   }
 
   scheduleCleaning(idChambre: number): void {
+    console.log('idChambre:', idChambre);
     this.cs.scheduleCleaning(idChambre).subscribe(
-      (response) => {
-        console.log('Cleaning scheduled successfully:', response);
+      (chambre) => {
+        // Handle success, if needed
+        console.log('Cleaning scheduled successfully', chambre);
+        this.fetchChambres();
       },
       (error) => {
-        console.error('Error scheduling cleaning:', error);
+        // Handle error, if needed
+        console.error('Error scheduling cleaning', error);
       }
     );
   }

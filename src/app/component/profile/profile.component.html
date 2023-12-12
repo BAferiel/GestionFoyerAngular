@@ -75,39 +75,61 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="example-text-input" class="form-control-label">First name</label>
-                      <input name="name" class="form-control" type="text" value="{{user.name}}" [(ngModel)]="user.name">
+                      <input name="name" class="form-control" type="text" value="{{user.name}}" [(ngModel)]="user.name" #us="ngModel" [ngClass]="{'is-invalid': us.invalid && (us.dirty || us.touched), 'is-valid': !us.invalid && (us.dirty || us.touched)}" required>
+                      <div *ngIf="us.invalid && (us.dirty || us.touched)" class="is-dirty-touched" >
+                        <div *ngIf="us?.errors?.['required']">
+                          Name is required.
+                      </div></div>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="example-text-input" class="form-control-label">Last name</label>
-                      <input name="prenomEt" class="form-control" type="text" value="{{user.prenomEt}}" [(ngModel)]="user.prenomEt">
-                    </div>
+                      <input name="prenomEt" class="form-control" type="text" value="{{user.prenomEt}}" [(ngModel)]="user.prenomEt" #pr="ngModel" [ngClass]="{'is-invalid': pr.invalid && (pr.dirty || pr.touched), 'is-valid': !pr.invalid && (pr.dirty || pr.touched)}" required>
+                      <div *ngIf="pr.invalid && (pr.dirty || pr.touched)" class="is-dirty-touched" >
+                        <div *ngIf="pr?.errors?.['required']">
+                          Last name is required.
+                    </div></div></div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="example-text-input" class="form-control-label">CIN</label>
-                      <input name="cin" class="form-control" type="text" value="{{user.cin}}" [(ngModel)]="user.cin">
+                      <input name="cin" class="form-control" type="text" value="{{user.cin}}" [(ngModel)]="user.cin" #cin="ngModel" [ngClass]="{'is-invalid': cin.invalid && (cin.dirty || cin.touched), 'is-valid': !cin.invalid && (cin.dirty || cin.touched)}" required>
+                      <div *ngIf="cin.invalid && (cin.dirty || cin.touched)" class="is-dirty-touched" >
+                        <div *ngIf="cin?.errors?.['required']">
+                          CIN is required.</div></div>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="example-text-input" class="form-control-label">Email address</label>
-                      <input name="email" class="form-control" type="email" value="{{user.email}}" [(ngModel)]="user.email">
+                      <input name="email" class="form-control" type="email" value="{{user.email}}" [(ngModel)]="user.email" #em="ngModel" [ngClass]="{'is-invalid': em.invalid && (em.dirty || em.touched), 'is-valid': !em.invalid && (em.dirty || em.touched)}" required>
+                      <div *ngIf="em.invalid && (em.dirty || em.touched)" class="is-dirty-touched" >
+                        <div *ngIf="em?.errors?.['required']">
+                          Email is required.
+                        </div></div>
                     </div>
                   </div>
                  
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="example-text-input" class="form-control-label">Date de Naissance</label>
+                      <label for="example-text-input" class="form-control-label">Birth date</label>
                       <input name="dataNaissance" class="form-control" type="date" value="{{user.dataNaissance | date:'yyyy-MM-dd'}}"
-                        [(ngModel)]="user.dataNaissance">
+                        [(ngModel)]="user.dataNaissance" required #dn="ngModel" [ngClass]="{'is-invalid': dn.invalid && (dn.dirty || dn.touched), 'is-valid': !dn.invalid && (dn.dirty || dn.touched)}">
+                        <div *ngIf="dn.invalid && (dn.dirty || dn.touched)" class="is-dirty-touched" >
+                          <div *ngIf="dn?.errors?.['required']">
+                            admin is required.
+                          </div></div>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="example-text-input" class="form-control-label">School</label>
-                      <input name="ecole" class="form-control" type="text" value="{{user.ecole}}" [(ngModel)]="user.ecole">
+                      <input name="ecole" class="form-control" type="text" value="{{user.ecole}}" [(ngModel)]="user.ecole" #ec="ngModel" [ngClass]="{'is-invalid': ec.invalid && (ec.dirty || ec.touched), 'is-valid': !ec.invalid && (ec.dirty || ec.touched)}" required>
+                      <div *ngIf="ec.invalid && (ec.dirty || ec.touched)" class="is-dirty-touched" >
+                        <div *ngIf="ec?.errors?.['required']">
+                          School is required.
+                        </div></div>
                     </div>
                   </div>
 

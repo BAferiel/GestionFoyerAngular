@@ -13,6 +13,7 @@ export class AllfoyerComponent implements OnInit{
   foyers!: Foyer[];
   rechercheFoyer='';
 
+
   constructor(private foyerService: FoyerService,
     private router : Router) {}
 

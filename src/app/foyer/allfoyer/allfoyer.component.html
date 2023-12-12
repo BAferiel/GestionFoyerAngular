@@ -17,9 +17,12 @@
                             <table class="table align-items-center mb-0">
                                 <thead>
                                 <tr>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Room Number</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID foyer</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nom Foyer</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Capacité Foyer</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Bloc Reserve</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Update</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Delete</th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
                                 </thead>
@@ -42,9 +45,11 @@
                                         </ul>
                                     </td>
                                     <td class="button-container">
-                                        <button  [routerLink]="['/foyerList/updateFoyer',foyer.idfFoyer]"  type="button" class="btn bg-gradient-info" > <i class="fas fa-pencil-alt"></i>Update</button>
-                                        <button type="button" class="btn btn-danger" (click)="deleteFoyer($event,foyer)" > <i class="fas fa-trash"></i>Delete</button>
+                                        <button  [routerLink]="['/foyerList/updateFoyer',foyer.idfFoyer]"  type="button" class="btn bg-gradient-info" >Modifier</button>
+                                        
                                     </td>
+                                    <td class="button-container"> 
+                                        <button type="button" class="btn btn-danger" (click)="deleteFoyer($event,foyer)" >Supprimer</button></td>
                                 </tr>
                                 </tbody>
                             </table>

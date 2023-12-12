@@ -7,13 +7,15 @@ import {AjoutBlocComponent} from "./ajout-bloc/ajout-bloc.component";
 import {ModifBlocComponent} from "./modif-bloc/modif-bloc.component";
 import {CoreModule} from "../module/core/core.module";
 import {FormsModule} from "@angular/forms";
+import {RecherchePipe} from "./Search/recherche.pipe";
 
 
 @NgModule({
   declarations: [
     AfficheBlocComponent,
     AjoutBlocComponent,
-    ModifBlocComponent
+    ModifBlocComponent,
+    RecherchePipe,
   ],
   imports: [
     CommonModule,

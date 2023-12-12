@@ -5,6 +5,7 @@ import { ListUniversiteComponent } from './list-universite/list-universite.compo
 import { AddUniversiteComponent } from './add-universite/add-universite.component';
 import { FormsModule } from '@angular/forms';
 import {CoreModule} from "../module/core/core.module";
+import {RecherchePipe} from "./Search/recherche.pipe";
 
 
 
@@ -12,6 +13,8 @@ import {CoreModule} from "../module/core/core.module";
   declarations: [
     ListUniversiteComponent,
     AddUniversiteComponent,
+    RecherchePipe,
+   
   ],
   imports: [
     CommonModule,

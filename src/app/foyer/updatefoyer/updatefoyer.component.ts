@@ -17,6 +17,7 @@ export class UpdatefoyerComponent implements OnInit{
 
   ngOnInit(): void {
     this.idfFoyer = this.route.snapshot.params["idfFoyer"];
+    console.log('idfFoyer:', this.idfFoyer);
     this.foyerService.findFoyerById(this.idfFoyer).subscribe((data) =>{
       this.foyer = data;
     },error=> console.log(error));
@@ -27,7 +28,7 @@ export class UpdatefoyerComponent implements OnInit{
   }
 
 
-  updateBlocS(){
+  updateFoyer1(){
     this.foyerService.updateFoyer(this.foyer,this.idfFoyer).subscribe((data) =>{
       console.log(data);
       this.foyer = new Foyer();
